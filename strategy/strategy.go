@@ -6,12 +6,17 @@ type Strategy interface {
 	fun()
 }
 
+const (
+	StrategyType1 = "strategy1"
+	StrategyType2 = "strategy2"
+)
+
 var StrategyMap map[string]Strategy
 
 func init() {
 	StrategyMap = map[string]Strategy{
-		"1": &Strategy1{},
-		"2": &Strategy2{},
+		StrategyType1: &Strategy1{},
+		StrategyType2: &Strategy2{},
 	}
 }
 
